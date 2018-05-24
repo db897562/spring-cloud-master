@@ -1,0 +1,17 @@
+#\u58F0\u660E\u7AEF\u53E3\u53F7
+server:
+  port: 8081
+spring:
+  application:
+    name: eureka-server
+#\u901A\u8FC7eureka.client.registerWithEureka\uFF1Afalse\u548CfetchRegistry\uFF1Afalse\u6765\u8868\u660E\u81EA\u5DF1\u662F\u4E00\u4E2Aeureka server.
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enableSelfPreservation: false
